@@ -5,14 +5,14 @@ namespace SampleWebApiAspNetCore.Services
 {
     public class SeedDataService : ISeedDataService
     {
-        public void Initialize(FoodDbContext context)
+        public void Initialize(RelicDbContext relicContext)
         {
-            context.FoodItems.Add(new FoodEntity() { Calories = 1000, Type = "Starter", Name = "Lasagne", Created = DateTime.Now });
-            context.FoodItems.Add(new FoodEntity() { Calories = 1100, Type = "Main", Name = "Hamburger", Created = DateTime.Now });
-            context.FoodItems.Add(new FoodEntity() { Calories = 1200, Type = "Dessert", Name = "Spaghetti", Created = DateTime.Now });
-            context.FoodItems.Add(new FoodEntity() { Calories = 1300, Type = "Starter", Name = "Pizza", Created = DateTime.Now });
+            relicContext.RelicItems.Add(new RelicEntity() { Attack = 1000, Type = "Helmet", Name = "Helmet of Barbs", Created = DateTime.Now });
+            relicContext.RelicItems.Add(new RelicEntity() { Attack = 1100, Type = "Cape", Name = "Not-a-cape", Created = DateTime.Now });
+            relicContext.RelicItems.Add(new RelicEntity() { Attack = 1200, Type = "Boots", Name = "Theif's escape", Created = DateTime.Now });
+            relicContext.RelicItems.Add(new RelicEntity() { Attack = 1300, Type = "Cape", Name = "Cloak of Kafka", Created = DateTime.Now });
 
-            context.SaveChanges();
+            relicContext.SaveChanges();
         }
     }
 }
